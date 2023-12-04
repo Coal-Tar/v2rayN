@@ -40,7 +40,7 @@ jobs:
       with:
         name: v2rayN
         path: 
-          .\v2rayN\v2rayN.zip
+          .\v2rayN
 
       
     # - name: Release
