@@ -35,5 +35,5 @@ if ( Test-Path -Path .\bin\v2rayN ) {
 Write-Host 'Build done'
 
 ls $OutputPath
-7z a  v2rayN.zip $OutputPath
+# 7z a  v2rayN.zip $OutputPath
 exit 0

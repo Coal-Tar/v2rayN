@@ -23,8 +23,8 @@ jobs:
       with:
         token: ${{ github.token }}
         repository: ${{ github.repository }}
-        retain_days: 0
-        keep_minimum_runs: 1
+        retain_days: 30
+        keep_minimum_runs: 5
 
     - name: Build
       run:  cd v2rayN && 
@@ -36,11 +36,11 @@ jobs:
     #     7z a -mx9 ..\v2rayN.7z $env:Wap_Project_Directory
 
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: v2rayN
         path: 
-          .\v2rayN\v2rayN.zip
+          .\v2rayN\bin\v2rayN
 
       
     # - name: Release
