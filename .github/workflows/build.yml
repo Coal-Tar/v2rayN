@@ -62,7 +62,7 @@ jobs:
 
     - name: Build AmazTool
       working-directory: ./v2rayN
-      run: dotnet publish ./AmazTool/AmazTool.csproj -c Release -r $RID -p:SelfContained=false -p:PublishTrimmed=true $ExtOpt -o $Output
+      run: dotnet publish ./AmazTool/AmazTool.csproj -c Release -r $RID -p:SelfContained=false $ExtOpt -o $Output
 
     - name: Upload build artifacts
       uses: actions/upload-artifact@v7.0.1
