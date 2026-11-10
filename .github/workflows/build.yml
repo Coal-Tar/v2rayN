@@ -109,19 +109,19 @@ jobs:
     - name: Build AmazTool
       shell: bash
       working-directory: ./v2rayN
-      run: dotnet publish ./AmazTool/AmazTool.csproj -c Release -r $RID -p:SelfContained=true -p:PublishTrimmed=true $ExtOpt ${{ env.DOTNET_AOT_ARG }} -o ${{ env.OUTPUT }}
+      run: dotnet publish ./AmazTool/AmazTool.csproj -c Release -r $RID -p:SelfContained=false -p:PublishTrimmed=true $ExtOpt ${{ env.DOTNET_AOT_ARG }} -o ${{ env.OUTPUT }}
 
     - name: Build v2rayN WPF
       shell: bash
       if: inputs.project == './v2rayN/v2rayN.csproj'
       working-directory: ./v2rayN
-      run: dotnet publish $Project -c Release -r $RID -p:SelfContained=true $ExtOpt -o ${{ env.OUTPUT }}
+      run: dotnet publish $Project -c Release -r $RID -p:SelfContained=false $ExtOpt -o ${{ env.OUTPUT }}
 
     - name: Build v2rayN Avalonia
       shell: bash
       if: inputs.project == './v2rayN.Desktop/v2rayN.Desktop.csproj'
       working-directory: ./v2rayN
-      run: dotnet publish $Project -c Release -r $RID -p:SelfContained=true $ExtOpt ${{ env.DOTNET_AOT_ARG }} -o ${{ env.OUTPUT }}
+      run: dotnet publish $Project -c Release -r $RID -p:SelfContained=false $ExtOpt ${{ env.DOTNET_AOT_ARG }} -o ${{ env.OUTPUT }}
 
     - name: Remove Debug Symbols
       shell: bash
